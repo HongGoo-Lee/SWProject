@@ -1,0 +1,14 @@
+@startuml
+class Course {
+    +course_registration(): void
+    +timetable(): void
+    +course_list(): void
+}
+
+class Grade {
+    +grade_insert(): void
+    +grade_check(): void
+    +total_grade(): void
+}
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+interface Employee {
+    +void setClassesSetting()
+    +void setGradeSetting()
+}
+
+interface Propessor {
+    +void registrationGrade()
+    +void searchName()
+}
+
+interface Student {
+    +void requestClasses()
+    +void searchGrade()
+}
+
+class Haksa {
+    +Haksa()
+    +void setClassesSetting()
+    +void setGradeSetting()
+    +void registrationGrade()
+    +void searchName()
+    +void searchGrade()
+    +void requestClasses()
+}
+
+Employee <|.. Haksa
+Propessor <|.. Haksa
+Student <|.. Haksa
+
+@enduml

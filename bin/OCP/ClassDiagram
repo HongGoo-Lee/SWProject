@@ -1,0 +1,42 @@
+@startuml
+
+abstract class PlayCodec {
+    +PlayCodec()
+    +play()
+}
+
+class AVI {
+    +AVI()
+    +play()
+}
+
+class MP4 {
+    +MP4()
+    +play()
+}
+
+class MP21 {
+    +MP21()
+    +play()
+}
+
+class WMV {
+    +WMV()
+    +play()
+}
+
+class Video_Player {
+    -PlayCodec pc
+    +Video_Player(PlayCodec pc)
+    +setCodec(PlayCodec pc)
+    +start()
+}
+
+Video_Player --> PlayCodec : \~pc \n 0..1
+PlayCodec <|-- WMV
+PlayCodec <|-- MP21
+PlayCodec <|-- MP4
+PlayCodec <|-- AVI
+
+
+@enduml

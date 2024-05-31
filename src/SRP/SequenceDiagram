@@ -1,0 +1,47 @@
+@startuml
+actor User
+participant Main
+participant Course
+participant Grade
+
+User -> Main: main(String[] args)
+activate Main
+
+Main -> Course: course_registration()
+activate Course
+Course -> Course: course_registration()
+Course --> Main: "수강신청"
+deactivate Course
+
+Main -> Course: timetable()
+activate Course
+Course -> Course: timetable()
+Course --> Main: "시간표조회"
+deactivate Course
+
+Main -> Course: course_list()
+activate Course
+Course -> Course: course_list()
+Course --> Main: "개설과목조회"
+deactivate Course
+
+Main -> Grade: grade_insert()
+activate Grade
+Grade -> Grade: grade_insert()
+Grade --> Main: "성적입력"
+deactivate Grade
+
+Main -> Grade: grade_check()
+activate Grade
+Grade -> Grade: grade_check()
+Grade --> Main: "성적조회"
+deactivate Grade
+
+Main -> Grade: total_grade()
+activate Grade
+Grade -> Grade: total_grade()
+Grade --> Main: "누적성적조회"
+deactivate Grade
+
+deactivate Main
+@enduml

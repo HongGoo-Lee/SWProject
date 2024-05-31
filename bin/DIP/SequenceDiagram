@@ -1,0 +1,52 @@
+@startuml
+actor User
+
+User -> Main: main()
+activate Main
+
+Main -> GameServer: new GameServer()
+activate GameServer
+
+Main -> GameServer: Game_Play(new SuperMario())
+activate SuperMario
+GameServer -> SuperMario: Start()
+SuperMario -> SuperMario: returnTitle()
+SuperMario -> SuperMario: returnVersion()
+activate SuperMario
+SuperMario -> GameServer: 게임명 : Super Mario\n버전 : v1.0\nSuper Mario을(를) 시작합니다.
+deactivate SuperMario
+deactivate SuperMario
+
+Main -> GameServer: Game_Play(new Tetris())
+activate Tetris
+GameServer -> Tetris: Start()
+Tetris -> Tetris: returnTitle()
+Tetris -> Tetris: returnVersion()
+activate Tetris
+Tetris -> GameServer: 게임명 : Tetris\n버전 : v1.3\nTetris을(를) 시작합니다.
+deactivate Tetris
+deactivate Tetris
+
+Main -> GameServer: Game_Play(new LOL())
+activate LOL
+GameServer -> LOL: Start()
+LOL -> LOL: returnTitle()
+LOL -> LOL: returnVersion()
+activate LOL
+LOL -> GameServer: 게임명 : League of Legends\n버전 : v.2020\nLeague of Legends을(를) 시작합니다.
+deactivate LOL
+deactivate LOL
+
+Main -> GameServer: Game_Play(new Racing())
+activate Racing
+GameServer -> Racing: Start()
+Racing -> Racing: returnTitle()
+Racing -> Racing: returnVersion()
+activate Racing
+Racing -> GameServer: 게임명 : Racing\n버전 : v2.3\nRacing을(를) 시작합니다.
+deactivate Racing
+deactivate Racing
+
+deactivate GameServer
+deactivate Main
+@enduml

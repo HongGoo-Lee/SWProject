@@ -1,0 +1,35 @@
+@startuml
+
+abstract class Lecturer {
+    +Lecturer()
+    +String lecturer
+    +int charge = 70000
+    +void lecturerInfo()
+}
+
+class LecturerAtGS {
+    +LecturerAtGS()
+    +void lecturerInfo()
+}
+
+class LecturerNight {
+    +LecturerNight()
+    +void lecturerInfo()
+}
+
+class LecturerWithWork {
+    +LecturerWithWork()
+    +void lecturerInfo()
+}
+
+class LecturerNomal {
+    +LecturerNomal()
+    +void lecturerInfo()
+}
+
+Lecturer <|-- LecturerAtGS
+Lecturer <|-- LecturerNight
+Lecturer <|-- LecturerWithWork
+Lecturer <|-- LecturerNomal
+
+@enduml
